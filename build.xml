@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default">
+	<description>description</description>
+
+	<target name="default" description="description">
+		<delete dir="work"/>
+		<mkdir dir="work"/>
+		<javac
+			srcdir="src"
+			destdir="work"
+			encoding="UTF-8"
+			target="1.6"
+			>
+		</javac>
+		<jar basedir="work"
+			destfile="JavaEnumFont.jar">
+			<manifest>
+				<attribute name="Main-Class" value="jp.seraphyware.enumfont.JavaEnumFont"/>
+			</manifest>
+		</jar>
+		<delete dir="work"/>
+	</target>
+</project>
