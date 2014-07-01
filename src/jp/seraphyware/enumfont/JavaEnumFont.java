@@ -89,7 +89,7 @@ public class JavaEnumFont extends JFrame {
 			}
 		}
 
-		final String[] columnNames = {"Family", "Name", "Posix", "UI Default"};
+		final String[] columnNames = {"Family", "Name", "Posix", "Japanese", "UI Default"};
 		
 		DefaultTableModel model = new DefaultTableModel() {
 			@Override
@@ -136,12 +136,28 @@ public class JavaEnumFont extends JFrame {
 						
 					case 3:
 					{
+						if (font.canDisplay(0x29E3D) && font.canDisplay(0x1F623)) {
+							ret = "(1) 絵文字可";
+						} else if (font.canDisplay(0x29E3D)) {
+							ret = "(2) サロゲート可";
+						} else if (font.canDisplay('あ') && font.canDisplay('・')) {
+							ret = "(3) 日本語可";
+						} else if (font.canDisplay('あ')) {
+							ret = "(4) ひらがな可";
+						} else {
+							ret = "";
+						}
+						break;
+					}
+
+					case 4:
+					{
 						ret = defaultFamilies.get(font.getFamily(Locale.ENGLISH));
 						if (ret == null) {
 							ret = defaultNames.get(font.getName());
 						}
-					}
 						break;
+					}
 				}
 				return ret;
 			}
@@ -155,7 +171,7 @@ public class JavaEnumFont extends JFrame {
 		contentPane.add(scr, BorderLayout.CENTER);
 		
 		final JTextArea textArea = new JTextArea();
-		textArea.setText("あいうえおかきくけこ\r\n森鷗外・繫がる \r\n123456789\r\nABCDEFG");
+		textArea.setText("あいうえおかきくけこ\r\n森鷗外・繫がる \r\n123456789\r\nABCDEFG\r\n[\ud867\ude3d] [\ud83c\udf82]");
 		
 		final SpinnerNumberModel fontSizeModel = new SpinnerNumberModel(10, 4, 48, 1);
 		final JSpinner fontSize = new JSpinner(fontSizeModel);
