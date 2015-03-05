@@ -28,9 +28,13 @@ Java7以降のランタイムが必要です。
 ----------------
 [![Build Status](https://travis-ci.org/seraphy/JavaEnumFont.svg)](https://travis-ci.org/seraphy/JavaEnumFont)
 
+プロジェクトはNetBeans8で作成されました。
+
 ビルドにはMavenが必要です。
 
-プロジェクトはNetBeans8で作成されました。
+mvn clean package
+
+で、targetディレクトリ上に実行可能jarが生成されます。
 
 
 
