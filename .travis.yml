@@ -3,6 +3,7 @@ env:
     global:
       - MAVEN_OPTS="-Xmx128m"
 jdk:
-  - oraclejdk7
+  - openjdk8
+  - openjdk11
 script:
   - mvn clean test
