@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>jp.seraphyware</groupId>
     <artifactId>JavaEnumFont</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <name>JavaEnumFont</name>
-    
-    <description><![CDATA[
+    <description>
+        <![CDATA[
         Java Swing実行環境における、表示可能なフォント一覧と、そのフォントがもつグリフについて
         「ひらがな」「日本語」「サロゲート」「簡体字」「絵文字」の表示有無を調べる。
         および、UIManagerにおける各種コンポーネントのデフォルトのフォントを示す。
-    ]]></description>
-
+    ]]>
+    </description>
     <url>https://github.com/seraphy/JavaEnumFont</url>
-
     <organization>
         <name>seraphyware.jp</name>
         <url>https://github.com/seraphy</url>
     </organization>
-
     <scm>
         <connection>scm:git:https://github.com/seraphy/JavaEnumFont.git</connection>
         <developerConnection>scm:git:https://github.com/seraphy/JavaEnumFont.git</developerConnection>
         <tag>HEAD</tag>
         <url>https://github.com/seraphy/JavaEnumFont</url>
     </scm>
-
     <!-- 継続的インテグレーションシステム -->
     <ciManagement>
         <system>travis-ci</system>
         <url>https://travis-ci.org/seraphy/JavaEnumFont</url>
     </ciManagement>
-
     <!-- 課題追跡システム -->
     <issueManagement>
         <url>https://github.com/seraphy/JavaEnumFont/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
-
     <developers>
         <developer>
             <id>seraphy</id>
@@ -49,7 +44,6 @@
             <url>http://sourceforge.jp/users/seraphy/</url>
         </developer>
     </developers>
-
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -57,20 +51,29 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <mainClass>jp.seraphyware.javaenumfont.JavaEnumFont</mainClass>
     </properties>
-    
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <compilerArgs>
+                        <!-- <arg>-verbose</arg> -->
+                        <arg>-Xlint:all,-options,-path</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.5.3</version>
+                <version>3.1.0</version>
                 <configuration>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
