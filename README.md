@@ -1,6 +1,4 @@
-Java実行環境フォント一覧ユーテリティ [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-============
+# Java実行環境フォント一覧ユーテリティ [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Javaで実行環境でサポートされている、すべてのフォントと、UIManagerが示すデフォルトフォントの関係を一覧表示する。
 
