@@ -1,4 +1,4 @@
-# Java実行環境フォント一覧ユーテリティ [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# Java実行環境フォント一覧ユーテリティ [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Build Status](https://travis-ci.com/seraphy/JavaEnumFont.svg?branch=master)](https://travis-ci.com/seraphy/JavaEnumFont)
 
 Javaで実行環境でサポートされている、すべてのフォントと、UIManagerが示すデフォルトフォントの関係を一覧表示する。
 
@@ -25,7 +25,6 @@ Java7以降のランタイムが必要です。
 
 ビルド方法
 ----------------
-[![Build Status](https://travis-ci.org/seraphy/JavaEnumFont.svg)](https://travis-ci.org/seraphy/JavaEnumFont)
 
 プロジェクトはNetBeans8で作成されました。
 
